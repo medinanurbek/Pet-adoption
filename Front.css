@@ -244,6 +244,16 @@ footer {
   margin-bottom: 12px;
 }
 
+nav a {
+  padding: 10px 20px;
+  color: #111;
+  text-decoration: none;
+  font-weight: 600;
+}
+nav a:hover {
+  color: #ff9a3b;
+}
+
 
 
 
