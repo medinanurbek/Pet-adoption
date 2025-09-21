@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> Pet adoption </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="Front.css">
+
+</head>
+
+<body>
+
+<header id="header">
+  <div class="header-bg"></div>
+  <div class="header-content">
+    <div class="logo">
+      <img src="pet-owner.png" class="logo-img">
+      <span> ㅤPet adoption</span>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <img src="Main cats img.jpg" alt="Cats" class="hero-bg">
+  <div class="hero-overlay-bg"></div>
+  <div class="hero-content">
+    <h1>
+      Find your new best friend<br><span class="highlight">Pet adoption</span><br>
+      <br>
+    </h1>
+    <button class="cta-btn more-btn">More</button>
+  </div>
+</section>
+
+<section class="features">
+  <span class="section-label">Adopt. Rescue. Love.</span>
+  <h2>Together we can give every pet a home.</h2>
+  <p class="features-subtitle">
+    Thousands of cats, dogs, and other animals are looking for a family just like yours.
+  </p>
+  <div class="features-grid">
+    <div class="feature">
+      <img src="cat 2.png" alt="Cat" class="feature-img">
+      <h3>Cats</h3>
+    </div>
+    <div class="feature">
+      <img src="dog 2.png" alt="Dog" class="feature-img">
+      <h3>Dogs</h3>
+    </div>
+    <div class="feature">
+      <img src="Other Animals.png" alt="Other Animals" class="feature-img">
+      <h3>Other Animals</h3>
+    </div>
+  </div>
+</section>
+
+
+<section class="features">
+  <h2>Site Sections</h2>
+  <div class="features-grid">
+    <a href="http://127.0.0.1:5500/adopt.html" class="feature">
+      <h3><span class="highlight">Adopt a Pet</span></h3>
+      <p>Browse cats, dogs, and other animals looking for a home.</p>
+    </a>
+
+    <a href="#" class="feature">
+      <h3><span class="highlight">How to Adopt</span></h3>
+      <p>Step-by-step guide on the adoption process.</p>
+    </a>
+
+    <a href="#" class="feature">
+      <h3><span class="highlight">Success Stories</span></h3>
+      <p>Real stories of happy adoptions.</p>
+    </a>
+  </div>
+</section>
+
+
+<footer>
+  <p>© 2025 Pet Adoption Project by Medina & Bekarys.| Adopt. Rescue. Love.</p>
+</footer>
+<script src="script.js"></script>
+
+<script>
+  window.addEventListener("scroll", function() {
+    const header = document.querySelector("header");
+    if (window.scrollY > 50) {
+      header.classList.add("scrolled", "show");
+    } else {
+      header.classList.remove("scrolled", "show");
+    }
+  });
+</script>
+
+</body>
+</html>
