@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Success Stories - Pet Adoption</title>
+  <link rel="stylesheet" href="Front.css">
+</head>
+<body>
+
+<header id="header">
+  <div class="header-bg"></div>
+  <div class="header-content">
+    <div class="logo">
+      <img src="pet-owner.png" class="logo-img" alt="logo">
+      <span>Pet adoption</span>
+    </div>
+    <nav class="nav-menu">
+      <a href="index.html">Home</a>
+      <a href="adopt.html">Adopt</a>
+      <a href="#">How to Adopt</a>
+      <a href="stories.html" class="active">Stories</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <img src="pet owner hero.jpg" alt="Happy pets" class="hero-bg">
+  <div class="hero-overlay-bg"></div>
+  <div class="hero-content">
+    <h1>
+      <span class="highlight">Success Stories</span><br>
+      Happy pets in their forever homes 🐾
+    </h1>
+  </div>
+</section>
+
+<section class="features">
+  <h2>Real Adoption Stories</h2>
+  <p class="features-subtitle">Meet the families who gave these pets a second chance ❤️</p>
+  <div class="features-grid">
+    <div class="feature">
+      <img src="Gigi owner.jpg" alt="Gigi adopt" class="feature-img">
+      <h3>Gigi’s New Home</h3>
+      <p>Gigi the cat found a loving home. She enjoys naps in the sun and endless cuddles 🐱☀️.</p>
+    </div>
+
+    <div class="feature">
+      <img src="Rex owner.jpg" alt="Rex adopted" class="feature-img">
+      <h3>Rex the Protector</h3>
+      <p>Rex was adopted by a family with kids. Now he is their loyal guardian and playmate 🐶👨‍👩‍👧‍👦.</p>
+    </div>
+
+    <div class="feature">
+      <img src="rabbit owner.jpg" alt="Dina adopted" class="feature-img">
+      <h3>Dina the Rabbit</h3>
+      <p>Dina found a cozy home with Mike. She hops around the garden and loves carrots 🥕🐇.</p>
+    </div>
+
+    <div class="feature">
+      <img src="parrot owner.jpg" alt="Rico adopted" class="feature-img">
+      <h3>Rico the Talker</h3>
+      <p>Rico the parrot now lives with a young lady. Every morning he says “Good morning!” 🦜☀️.</p>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Pet Adoption Project by Medina & Bekarys | Adopt. Rescue. Love.</p>
+</footer>
+
+<script>
+  window.addEventListener("scroll", function() {
+    const header = document.querySelector("header");
+    if (window.scrollY > 50) {
+      header.classList.add("scrolled", "show");
+    } else {
+      header.classList.remove("scrolled", "show");
+    }
+  });
+</script>
+
+</body>
+</html>
