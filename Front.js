@@ -1,4 +1,3 @@
-// Хедер: плавный "дроп" при ПЕРВОМ переходе в состояние scrolled
 const header = document.getElementById('header');
 
 window.addEventListener('scroll', () => {
@@ -15,17 +14,14 @@ window.addEventListener('scroll', () => {
 function applyHeaderState() {
   const scrolled = window.scrollY > 30;
 
-  // при входе в scrolled запускаем эффект "опускания"
   if (scrolled && !wasScrolled) {
     header.classList.add('scrolled');
 
-    // один раз проигрываем "дроп": из -24px к 0
     if (!dropping) {
       dropping = true;
-      header.style.transform = 'translateY(-24px)';     // стартовая позиция
+      header.style.transform = 'translateY(-24px)';  
       requestAnimationFrame(() => {
-        header.style.transform = 'translateY(0)';       // плавный въезд вниз
-        // после окончания анимации сбросим флаг
+        header.style.transform = 'translateY(0)';      
         setTimeout(() => { dropping = false; }, 400);
       });
     }
@@ -34,7 +30,6 @@ function applyHeaderState() {
     return;
   }
 
-  // при выходе из scrolled возвращаем прозрачный режим без рывков
   if (!scrolled && wasScrolled) {
     header.classList.remove('scrolled');
     header.style.transform = 'translateY(0)';
@@ -48,7 +43,6 @@ document.querySelectorAll(".faq-question").forEach(button => {
 
     item.classList.toggle("active");
 
-    // Меняем + ↔ –
     if (item.classList.contains("active")) {
       icon.textContent = "–";
     } else {
@@ -57,7 +51,6 @@ document.querySelectorAll(".faq-question").forEach(button => {
   });
 });
 
-// Кнопка в Hero (Подробнее → скролл к "Наши преимущества")
 document.querySelector('.more-btn').addEventListener('click', function() {
   document.querySelector('.features').scrollIntoView({
     behavior: 'smooth'

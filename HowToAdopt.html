@@ -3,133 +3,96 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Adopt a Pet</title>
+  <title>How to Adopt - Pet Adoption</title>
   <link rel="stylesheet" href="Front.css">
 </head>
 <body>
+
 <header id="header">
   <div class="header-bg"></div>
   <div class="header-content">
     <div class="logo">
-      <img src="pet-owner.png" class="logo-img">
+      <img src="images/pet-owner.png" class="logo-img">
       <span> ㅤPet adoption</span>
     </div>
-    <nav class="nav-menu">
-      <a href="Front.html">Home</a>
-      <a href="adopt.html">Adopt</a>
-      <a href="HowToAdopt.html">How to Adopt</a>
-      <a href="stories.html" class="active">Stories</a>
-    </nav>
+    <nav>
+    <a href="Front.html">Home</a>
+    <a href="adopt.html">Adopt</a>
+    <a href="HowToAdopt.html">How to Adopt</a>
+    <a href="stories.html">Stories</a>
+  </nav>
   </div>
 </header>
 
 <section class="hero">
-  <img src="https://i.pinimg.com/1200x/c7/11/d2/c711d285c07a05f6cc425675fb53a2b5.jpg"  class="hero-bg">
+  <img src="https://i.pinimg.com/1200x/c7/11/d2/c711d285c07a05f6cc425675fb53a2b5.jpg" alt="Adopt hero" class="hero-bg">
   <div class="hero-overlay-bg"></div>
   <div class="hero-content">
     <h1>
-      <span class="highlight">How To Adopt a Pet</span><br>
-      Adopt a pet in 5 easy steps
+      <span class="highlight">How to Adopt</span><br>
+      Step-by-step adoption guide 🐾
     </h1>
   </div>
 </section>
 
-  <main id="top">
-    <section class="container section">
-      <h2 class="section-title">The steps</h2>
-      <div class="steps">
-        <div class="step">
-          <h3>1. Browse pets</h3>
-          <p>Find your ideal cat, dog, or other pet on our Adopt page.</p>
-        </div>
-        <div class="step">
-          <h3>2. Submit application</h3>
-          <p>Fill out a form so we can match you with the right companion.</p>
-        </div>
-        <div class="step">
-          <h3>3. Meet & greet</h3>
-          <p>Schedule a visit at the shelter or online.</p>
-        </div>
-        <div class="step">
-          <h3>4. Home check</h3>
-          <p>Ensure your home is safe and cozy for the pet.</p>
-        </div>
-        <div class="step">
-          <h3>5. Adopt & love</h3>
-          <p>Sign agreement, pay fee (if any), and welcome your pet!</p>
-        </div>
-      </div>
-    </section>
-    <section class="container section">
-      <div class="grid-2">
-        <div class="card">
-          <h4>Requirements checklist</h4>
-          <ul class="checklist">
-            <li><input type="checkbox" id="age"><label for="age">18+ years old</label></li>
-            <li><input type="checkbox" id="id"><label for="id">Valid ID / Passport</label></li>
-            <li><input type="checkbox" id="address"><label for="address">Proof of address</label></li>
-            <li><input type="checkbox" id="landlord"><label for="landlord">Landlord approval (if renting)</label></li>
-          </ul>
-        </div>
+<main class="grid-layout">
+  <aside class="sidebar">
+    <h3>Requirements Checklist</h3>
+    <ul class="checklist">
+      <li><input type="checkbox" id="age"><label for="age">18+ years old</label></li>
+      <li><input type="checkbox" id="id"><label for="id">Valid ID / Passport</label></li>
+      <li><input type="checkbox" id="address"><label for="address">Proof of address</label></li>
+      <li><input type="checkbox" id="landlord"><label for="landlord">Landlord approval (if renting)</label></li>
+    </ul>
+  </aside>
 
-        <div class="card" id="faq">
-          <h4>FAQ</h4>
-          <div class="faq">
-            <details>
-              <summary>Do I need to pay a fee?</summary>
-              <p>Yes, small fees cover vaccines, microchip, and care.</p>
-            </details>
-            <details>
-              <summary>How long is the process?</summary>
-              <p>Usually 2–7 days depending on availability.</p>
-            </details>
-            <details>
-              <summary>Can I adopt if I live in an apartment?</summary>
-              <p>Yes! Many pets thrive in apartments with enough love and walks.</p>
-            </details>
-          </div>
-        </div>
-      </div>
-    </section>
+  <section class="main-content">
+    <h2>The Steps</h2>
+    <div class="steps">
+      <div class="step"><h3>1. Browse pets</h3><p>Find your ideal pet on our Adopt page.</p></div>
+      <div class="step"><h3>2. Submit application</h3><p>Fill out a form so we can match you with the right companion.</p></div>
+      <div class="step"><h3>3. Meet & greet</h3><p>Schedule a visit at the shelter or online.</p></div>
+      <div class="step"><h3>4. Home check</h3><p>Ensure your home is safe and cozy for the pet.</p></div>
+      <div class="step"><h3>5. Adopt & love</h3><p>Sign agreement, pay fee (if any), and welcome your pet!</p></div>
+    </div>
 
-    <section class="features">
+    <h2>FAQ</h2>
+    <div class="faq">
+      <details><summary>Do I need to pay a fee?</summary><p>Yes, small fees cover vaccines, microchip, and care.</p></details>
+      <details><summary>How long is the process?</summary><p>Usually 2–7 days depending on availability.</p></details>
+      <details><summary>Can I adopt if I live in an apartment?</summary><p>Yes! Many pets thrive in apartments with enough love and walks.</p></details>
+    </div>
+
     <h2>Adoption Application Form</h2>
-    <p class="features-subtitle">Fill out the form below to start the adoption process 📝</p>
+    <form class="adopt-form">
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required>
 
-  <form class="adopt-form">
-    <label for="name">Your Name:</label>
-    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+      <label for="email">Your Email:</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
 
-    <label for="email">Your Email:</label>
-    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      <label for="pet">Pet You Want to Adopt:</label>
+      <select id="pet" name="pet" required>
+        <option value="">-- Select a Pet --</option>
+        <option value="cat">Cat</option>
+        <option value="dog">Dog</option>
+        <option value="rabbit">Rabbit</option>
+        <option value="parrot">Parrot</option>
+      </select>
 
-    <label for="pet">Pet You Want to Adopt:</label>
-    <select id="pet" name="pet" required>
-      <option value="">-- Select a Pet --</option>
-      <option value="cat">Cat</option>
-      <option value="dog">Dog</option>
-      <option value="rabbit">Rabbit</option>
-      <option value="parrot">Parrot</option>
-    </select>
+      <label for="message">Why do you want to adopt?</label>
+      <textarea id="message" name="message" rows="4" placeholder="Write your message here..." required></textarea>
 
-    <label for="message">Why do you want to adopt?</label>
-    <textarea id="message" name="message" rows="4" placeholder="Write your message here..." required></textarea>
-
-    <button type="submit" class="cta-btn">Submit Application</button>
-  </form>
-  
-</section>
+      <button type="submit" class="cta-btn">Submit Application</button>
+    </form>
+  </section>
 </main>
 
-  
+<footer>
+  <p>© 2025 Pet Adoption Project by Medina & Bekarys | Adopt. Rescue. Love.</p>
+</footer>
 
-  <footer class="footer">
-    <div class="container foot-grid">
-      <p>© 2025 Pet Adoption Project · Medina & Bekarys</p>
-    </div>
-  </footer>
-
-  <script>
+<script>
   window.addEventListener("scroll", function() {
     const header = document.querySelector("header");
     if (window.scrollY > 50) {
@@ -139,5 +102,6 @@
     }
   });
 </script>
+
 </body>
 </html>
