@@ -457,13 +457,6 @@ nav a:hover {
   text-align: center;
 }
 
-.card-row .card img {
-  width: 100px;
-  height: 100px;
-  margin: 0 auto 15px;
-  object-fit: contain;
-}
-
 .card-row .card h3 {
   font-size: 20px;
   font-weight: 700;
