@@ -1,68 +1,121 @@
-const header = document.getElementById('header');
+document.getElementById('adoptForm').addEventListener('submit', function(event) {
+  event.preventDefault(); 
 
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 30) {
-    header.classList.add('show');
-    header.classList.add('scrolled');
+  let isValid = true;
+  let errorMessage = "";
+
+  const nameField = document.getElementById('name');
+  const emailField = document.getElementById('email');
+  const petField = document.getElementById('pet');
+  const messageField = document.getElementById('message');
+
+  document.getElementById('error-message').innerHTML = "";
+
+  // Reset field styles
+  nameField.style.border = emailField.style.border = petField.style.border = messageField.style.border = '';
+
+  if (!nameField.value.trim()) {
+    isValid = false;
+    errorMessage += "Name is required.<br>";
+    nameField.style.border = '2px solid red';  // Highlight the error field
+  }
+
+  const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+  if (!emailField.value.match(emailPattern)) {
+    isValid = false;
+    errorMessage += "Please enter a valid email address.<br>";
+    emailField.style.border = '2px solid red';  // Highlight the error field
+  }
+
+  if (!petField.value) {
+    isValid = false;
+    errorMessage += "Please select a pet to adopt.<br>";
+    petField.style.border = '2px solid red';  // Highlight the error field
+  }
+
+  if (!messageField.value.trim()) {
+    isValid = false;
+    errorMessage += "Message is required.<br>";
+    messageField.style.border = '2px solid red';  // Highlight the error field
+  }
+
+  if (!isValid) {
+    document.getElementById('error-message').innerHTML = errorMessage;
   } else {
-    header.classList.remove('scrolled');
-    header.classList.remove('show');
+    alert("Form submitted successfully!");
   }
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+  const accordionHeaders = document.querySelectorAll('.accordion-header');
 
-function applyHeaderState() {
-  const scrolled = window.scrollY > 30;
+  accordionHeaders.forEach(header => {
+    header.addEventListener('click', function () {
+      const content = header.nextElementSibling;
 
-  if (scrolled && !wasScrolled) {
-    header.classList.add('scrolled');
+      // Toggle the display of the content
+      if (content.style.display === 'block') {
+        content.style.display = 'none';
+      } else {
+        content.style.display = 'block';
+      }
+    });
+  });
+});
 
-    if (!dropping) {
-      dropping = true;
-      header.style.transform = 'translateY(-24px)';  
-      requestAnimationFrame(() => {
-        header.style.transform = 'translateY(0)';      
-        setTimeout(() => { dropping = false; }, 400);
-      });
+document.addEventListener('DOMContentLoaded', function () {
+  // Получаем элементы
+  const openPopupBtn = document.getElementById('openPopupBtn');
+  const closePopupBtn = document.getElementById('closePopupBtn');
+  const popupForm = document.getElementById('popupForm');
+
+  // Открытие попапа при клике на кнопку
+  openPopupBtn.addEventListener('click', function () {
+    popupForm.style.display = 'flex'; // Показываем попап
+  });
+
+  // Закрытие попапа при клике на кнопку закрытия
+  closePopupBtn.addEventListener('click', function () {
+    popupForm.style.display = 'none'; // Скрываем попап
+  });
+
+  // Закрытие попапа, если пользователь кликнул за пределы попапа
+  window.addEventListener('click', function (event) {
+    if (event.target === popupForm) {
+      popupForm.style.display = 'none'; // Скрыть попап
     }
+  });
+});
 
-    wasScrolled = true;
-    return;
+document.addEventListener('DOMContentLoaded', function () {
+  const dateTimeBlock = document.getElementById('dateTimeBlock');
+
+  function updateDateTime() {
+    const now = new Date();  // Получаем текущую дату и время
+
+    // Опции для форматирования даты
+    const options = {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: true  // Использование 12-часового формата
+    };
+
+    // Форматируем дату и время
+    const formatted = now.toLocaleString('en-US', options);
+
+    // Обновляем содержимое блока с датой и временем
+    dateTimeBlock.textContent = formatted;
   }
 
-  if (!scrolled && wasScrolled) {
-    header.classList.remove('scrolled');
-    header.style.transform = 'translateY(0)';
-    wasScrolled = false;
-  }
-}
-document.querySelectorAll(".faq-question").forEach(button => {
-  button.addEventListener("click", () => {
-    const item = button.parentElement;
-    const icon = button.querySelector(".faq-icon");
+  // Обновляем дату и время сразу после загрузки страницы
+  updateDateTime();
 
-    item.classList.toggle("active");
-
-    if (item.classList.contains("active")) {
-      icon.textContent = "–";
-    } else {
-      icon.textContent = "+";
-    }
-  });
-});
-
-document.querySelector('.more-btn').addEventListener('click', function() {
-  document.querySelector('.features').scrollIntoView({
-    behavior: 'smooth'
-  });
-});
-
-document.querySelector('.demo-btn').addEventListener('click', function() {
-  document.querySelector('.atlas').scrollIntoView({
-    behavior: 'smooth'
-  });
+  // Обновляем дату и время каждую секунду
+  setInterval(updateDateTime, 1000);
 });
 
 
-window.addEventListener('scroll', applyHeaderState);
-window.addEventListener('load', applyHeaderState);

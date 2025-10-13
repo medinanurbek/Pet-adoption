@@ -16,11 +16,11 @@
       <span> ㅤPet adoption</span>
     </div>
     <nav>
-    <a href="index.html">Home</a>
-    <a href="adopt.html">Adopt</a>
-    <a href="HowToAdopt.html">How to Adopt</a>
-    <a href="stories.html">Stories</a>
-  </nav>
+      <a href="index.html">Home</a>
+      <a href="adopt.html">Adopt</a>
+      <a href="HowToAdopt.html">How to Adopt</a>
+      <a href="stories.html">Stories</a>
+    </nav>
   </div>
 </header>
 
@@ -56,15 +56,41 @@
       <div class="step"><h3>5. Adopt & love</h3><p>Sign agreement, pay fee (if any), and welcome your pet!</p></div>
     </div>
 
-    <h2>FAQ</h2>
-    <div class="faq">
-      <details><summary>Do I need to pay a fee?</summary><p>Yes, small fees cover vaccines, microchip, and care.</p></details>
-      <details><summary>How long is the process?</summary><p>Usually 2–7 days depending on availability.</p></details>
-      <details><summary>Can I adopt if I live in an apartment?</summary><p>Yes! Many pets thrive in apartments with enough love and walks.</p></details>
-    </div>
+    <section class="faq">
+      <h2>Frequently Asked Questions</h2>
+      <div class="accordion">
+        <div class="accordion-item">
+          <button class="accordion-header">What is Pet Adoption?</button>
+          <div class="accordion-content">
+            <p>Pet adoption is the process of taking a pet from a shelter or rescue center and providing it with a permanent home.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header">Why should I adopt a pet?</button>
+          <div class="accordion-content">
+            <p>Adopting a pet gives them a second chance and provides you with a loyal companion.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header">How do I adopt a pet?</button>
+          <div class="accordion-content">
+            <p>You can browse available pets on our website, fill out an adoption application, and schedule a visit.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header">What is the adoption process?</button>
+          <div class="accordion-content">
+            <p>The adoption process includes browsing pets, submitting an application, meeting the pet, and completing the adoption paperwork.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <h2>Adoption Application Form</h2>
-    <form class="adopt-form">
+    <form class="adopt-form" id="adoptForm">
       <label for="name">Your Name:</label>
       <input type="text" id="name" name="name" placeholder="Enter your name" required>
 
@@ -84,24 +110,40 @@
       <textarea id="message" name="message" rows="4" placeholder="Write your message here..." required></textarea>
 
       <button type="submit" class="cta-btn">Submit Application</button>
+      <div id="error-message" style="color: red;"></div>
     </form>
+
   </section>
 </main>
 
+<!-- Subscribe Button (Trigger Popup) -->
+<button id="openPopupBtn" class="cta-btn">Subscribe</button>
+
+<!-- The Popup Form -->
+<div id="popupForm" class="popup-form">
+  <div class="popup-content">
+    <span id="closePopupBtn" class="close-btn">&times;</span>
+    <h2>Subscribe to Our Newsletter</h2>
+    <form id="subscribeForm">
+      <label for="popup-name">Your Name:</label>
+      <input type="text" id="popup-name" name="name" placeholder="Enter your name" required>
+
+      <label for="popup-email">Your Email:</label>
+      <input type="email" id="popup-email" name="email" placeholder="Enter your email" required>
+
+      <button type="submit" class="cta-btn">Subscribe</button>
+    </form>
+  </div>
+</div>
+
+
+
 <footer>
   <p>© 2025 Pet Adoption Project by Medina & Bekarys | Adopt. Rescue. Love.</p>
+  <div id="dateTimeBlock" style="font-size: 15px; font-weight: bold; text-align: center; margin-top: 30px;"></div>
 </footer>
 
-<script>
-  window.addEventListener("scroll", function() {
-    const header = document.querySelector("header");
-    if (window.scrollY > 50) {
-      header.classList.add("scrolled", "show");
-    } else {
-      header.classList.remove("scrolled", "show");
-    }
-  });
-</script>
+<script src="Front.js"></script> <!-- Link to external JavaScript -->
 
 </body>
 </html>
